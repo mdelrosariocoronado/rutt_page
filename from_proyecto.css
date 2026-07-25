@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #fffde6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background-image: url('images/fondo_form.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.page-shell {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-form {
+  width: 100%;
+  background: linear-gradient(180deg, #c3a4cc 0%, #dec6cf 100%);
+  border-radius: 60px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.form-header {
+  background-color: #645394;
+  padding: 24px 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-back {
+  background-color: #bfa1be;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 10px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit {
+  background-color: #d80073;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 10px 35px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(216, 0, 115, 0.2);
+}
+
+.form-body {
+background-image: url('images/fondo_login_empresa.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+    background-position:top center;
+  padding: 40px 60px 60px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-body h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 35px 0;
+  text-align: center;
+}
+
+.main-form {
+  width: 100%;
+  max-width: 80%;
+  display: flex;
+  gap: 30px;
+}
+
+#name{
+    width: 80%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.input-group label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+.input-group input[type="text"] {
+    width: 100%;
+    background-color: #fffde6;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: #8c7d8f;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.input-group textarea {
+  width: 100%;
+  background-color: #fffde6;
+  border: none;
+  border-radius: 4px;
+  padding: 20px;
+  font-size: 1.1rem;
+  outline: none;
+  resize: none;
+}
+
+.radio-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.radio-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.radio-options {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  align-items: center;
+}
+.radio-options span{
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000000;
+
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.radio-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-radio {
+  width: 22px;
+  height: 22px;
+  background-color: #fffde6;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.radio-label input:checked ~ .custom-radio {
+  background-color: #645394;
+  box-shadow: inset 0 0 0 4px #fffde6;
+}
+
+@media (max-width: 600px) {
+  .form-body {
+    padding: 30px 24px;
+  }
+  .radio-options {
+    flex-direction: row;
+    gap: 16px;
+    align-items:center;
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUTT - Crear Publicación</title>
+    <link rel="stylesheet" href="from_proyecto.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="card-form">
+        
+        <div class="form-header">
+          <a href="empresa.html" class="btn-back"> Volver </a>
+          <button type="submit" form="publication-form" class="btn-submit"> Subir </button>
+        </div>
+
+        <div class="form-body">
+          <h2>Publicar oportunidad</h2>
+
+          <div id="name" class="input-group">
+                <label for="postulacion-name">Nombre del puesto</label>
+                <input type="text" id="postulacion-name" placeholder="Ej. Desarrollador Full-time" required />
+            </div>
+          
+          <form id="publication-form" class="main-form">
+            
+                
+            <div class="input-group">
+
+                <div class="radio-section">
+                    <span class="radio-title">Tipo</span>
+                    <div class="radio-options">
+                        <label class="radio-label">
+                        <span>PPS</span>
+                        <input type="radio" name="tipo-puesto" value="PPS" required />
+                        <span class="custom-radio"></span>
+                        </label>
+                        <label class="radio-label">
+                        <span>Trabajo</span>
+                        <input type="radio" name="tipo-puesto" value="Trabajo" required />
+                        <span class="custom-radio"></span>
+                        </label>
+                        <label class="radio-label">
+                        <span>Pasantía</span>
+                        <input type="radio" name="tipo-puesto" value="Pasantía" />
+                        <span class="custom-radio"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="input-group">
+                <label for="postulacion-info">Descripción</label>
+                <textarea id="postulacion-info" rows="5" placeholder="Describe la oportunidad y el contexto del proyecto" required></textarea>
+                </div>
+
+            </div>
+
+            <div class="input-group">
+                <div class="input-group">
+                <label for="postulacion-modalidad">Modalidad</label>
+                <input type="text" id="postulacion-modalidad" placeholder="Ej. Modalidad híbrida en Tandil" required />
+                </div>
+
+                <div class="input-group">
+                <label for="postulacion-requisitos">Requisitos</label>
+                <textarea id="postulacion-requisitos" rows="5" placeholder="Ingresa los requisitos en líneas separadas o en una sola descripción" required></textarea>
+                </div>
+            </div>
+          </form>
+        </div>
+
+      </section>
+    </main>
+
+    <script>
+      document.getElementById("publication-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const empresa = document.getElementById("empresa-name").value.trim();
+        const nombre = document.getElementById("postulacion-name").value.trim();
+        const tipo = document.querySelector('input[name="tipo-puesto"]:checked').value;
+        const informacion = document.getElementById("postulacion-info").value.trim();
+        const modalidad = document.getElementById("postulacion-modalidad").value.trim();
+        const requisitos = document.getElementById("postulacion-requisitos").value.trim();
+
+        const nuevaPublicacion = {
+          id: Date.now(),
+          empresa: empresa || "Empresa",
+          logo: "images/geneos.jpg",
+          tipo: tipo,
+          tipoClase: tipo === "Pasantía" ? "badge-pasantia" : "badge-trabajo",
+          titulo: nombre,
+          descripcion: informacion,
+          modalidad: modalidad || "Modalidad a definir.",
+          requisito: requisitos ? `Requisito: ${requisitos}` : "Requisito: Información pendiente.",
+          requisitos: requisitos
+            ? requisitos.split(/\n|\s*\.\s*/).map(item => item.trim()).filter(Boolean)
+            : ["Sin requisitos especificados"]
+        };
+
+        let actuales = JSON.parse(localStorage.getItem("misPublicaciones")) || [];
+        actuales.push(nuevaPublicacion);
+        localStorage.setItem("misPublicaciones", JSON.stringify(actuales));
+
+        window.location.href = "empresa.html";
+      });
+    </script>
+  <script>
+  if (window.location.search) {
+    const urlLimpia = window.location.pathname;
+    window.history.replaceState({}, document.title, urlLimpia);
+  }
+</script>
+</body>
+</html>

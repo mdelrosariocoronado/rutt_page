@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUTT - Login Estudiante</title>
+    <link rel="stylesheet" href="login_estudiante.css" />
+  </head>
+  <body>
+    <a href="index.html">Volver</a>
+    <div class="login-shell">
+      <div class="card">
+        <div class="left-panel">
+          <h1>Bienvenido</h1>
+          <p>Rutt, donde el talento encuentra su lugar.</p>
+        </div>
+
+        <div class="right-panel">
+          <div class="login-card">
+            <h2>Inicio de sesión</h2>
+
+            <form>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input id="email" type="email" placeholder="correo@ejemplo.com" />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input id="password" type="password" placeholder="••••••••" />
+              </div>
+
+              <a href="login_empresa.html" class="form-link">¿No sos estudiante? Iniciar sesión como empresa</a>
+              <a href="estudiante.html" class="btn-submit">Ingresar</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    if (window.location.search) {
+      const urlLimpia = window.location.pathname;
+      window.history.replaceState({}, document.title, urlLimpia);
+    }
+
+  </script>
+</html>

@@ -31,14 +31,14 @@ RUTT surge con el objetivo de facilitar la adquisición de experiencia laboral e
 - **JavaScript (ES6+):** Manipulación del DOM, gestión de estados con `localStorage`, parámetros de URL y dinámicas de interfaz.
 ---
 
-## 🎨 Diseño & Prototipado (UX/UI)
+##  Diseño & Prototipado (UX/UI)
 
 El diseño de interfaz, la paleta de colores y el flujo de navegación de **RUTT** fueron maquetados previamente en Figma.
 
 - 🔗 [Ver Prototipo Interactivo en Figma](https://www.figma.com/design/SNU77CvnNSiVakgHJ0ZB8Y/RUTT?node-id=0-1&t=PQMVTdpQvd0zaUD8-1)
 
 ##  Pagina en GitHub Pages
-
+- 🔗 [https://mdelrosariocoronado.github.io/rutt_page/]
 
 ##  Cómo Ejecutarlo en Local
 

@@ -1,6 +1,7 @@
 # RUTT - Red Universitaria de Trabajo Temprano  
 
 > Plataforma web para conectar estudiantes universitarios con sus primeras oportunidades laborales, pasantías y PPS en el sector productivo y tecnológico.
+<img width="1890" height="407" alt="image" src="https://github.com/user-attachments/assets/0aeb1395-eff1-4abb-baec-1ec651ca1f4e" />
 
 ## El contenido es un MVP presentado como proyecto en la Universidad
 

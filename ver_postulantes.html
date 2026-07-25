@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUTT - Ver postulantes</title>
+    <link rel="stylesheet" href="ver_postulantes.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="main-container">
+        <div class="publications-header">
+          <div class="header-user-side">
+            <a href="empresa.html" class="btn-logout">Volver</a>
+            <h1 id="page-title">Detalle del puesto</h1>
+          </div>
+        </div>
+
+        <section class="dashboard-grid">
+          <div class="publications-panel">
+            <h2 id="puesto-titulo">Publicación</h2>
+            <div class="pub-card detail-card">
+              <p class="pub-description" id="puesto-desc"></p>
+              <p class="pub-details" id="puesto-detalles"></p>
+              <p class="pub-requirement" id="puesto-requisito"></p>
+            </div>
+          </div>
+
+          <div class="sidebar-panel">
+            <div class="filter-card">
+                <h3>Resumen del puesto</h3>
+                <ul class="detail-list">
+                  <li><strong>Modalidad:</strong> <span id="modalidad-resumen"></span></li>
+                  <li><strong>Requisitos:</strong> <span id="requisitos-resumen"></span></li>
+                </ul>
+
+                <h3 style="margin-top: 18px;">Postulantes al puesto</h3>
+                <div id="postulantes-container" class="postulantes-list">
+
+                <div class="postulante-item">
+                    <div class="postulante-info">
+                    <h4>Valentina Bisogni</h4>
+                    <p>Ingeniería en Sistemas · 4to año</p>
+                    </div>
+                    <a href="perfil_estudiante.html?modo=empresa" class="btn-search">Ver perfil</a>
+                </div>
+            </div>
+        </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const data = {
+        titulo: params.get("titulo") || "Desarrollador Full-time",
+        descripcion: params.get("descripcion") || "Descripción del puesto",
+        detalles: params.get("detalles") || "Modalidad a definir",
+        requisito: params.get("requisito") || "Requisito: Información pendiente"
+      };
+
+      document.getElementById("page-title").textContent = data.titulo;
+      document.getElementById("puesto-titulo").textContent = data.titulo;
+      document.getElementById("puesto-desc").textContent = data.descripcion;
+      document.getElementById("puesto-detalles").textContent = data.detalles;
+      document.getElementById("puesto-requisito").textContent = data.requisito;
+
+      const modalidadEl = document.getElementById("modalidad-resumen");
+      const requisitosEl = document.getElementById("requisitos-resumen");
+      if (modalidadEl) modalidadEl.textContent = data.detalles;
+      if (requisitosEl) requisitosEl.textContent = data.requisito.replace("Requisito: ", "");
+    </script>
+  <script>
+  if (window.location.search) {
+    const urlLimpia = window.location.pathname;
+    window.history.replaceState({}, document.title, urlLimpia);
+  }
+</script>
+</body>
+</html>

@@ -48,3 +48,10 @@ El diseño de interfaz, la paleta de colores y el flujo de navegación de **RUTT
    git clone [https://github.com/TU_USUARIO/rutt-plataforma.git](https://github.com/TU_USUARIO/rutt-plataforma.git)
 
 2. Navega a la carpeta del proyecto y abre index.html en tu navegador predeterminado (o utiliza la extensión Live Server en VS Code).
+
+
+## Documentacion
+- [https://docs.google.com/document/d/1N8OL0_2mAGw0Gqn1Fnt1XgcQdM8a6agR/edit?usp=sharing&ouid=116342108928276534823&rtpof=true&sd=true]
+- [https://drive.google.com/file/d/1ObUK6vMiCI7xB5c_Uz85h5sE6I1h9wxx/view?usp=sharing]
+- [https://drive.google.com/file/d/10WNUEyPC7M4FNu42Ui11fzeKySiWF9xy/view?usp=sharing]
+- [https://docs.google.com/document/d/1eRLt9_oE8wbPhGN85MNIDcW8GIO4UHMq/edit?usp=sharing&ouid=116342108928276534823&rtpof=true&sd=true]

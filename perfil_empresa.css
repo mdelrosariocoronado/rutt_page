@@ -1,0 +1,25 @@
+.company-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 78px;
+  height: 78px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--violet), var(--orange));
+  border: 4px solid white;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

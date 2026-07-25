@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUTT - Perfil Empresa</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="perfil_empresa.css" />
+  </head>
+  <body>
+    <header-component></header-component>
+
+    <main class="page-shell">
+      <section class="card">
+        <div class="hero-banner">
+          <h1>Perfil de empresa</h1>
+          <p>Gestiona tus publicaciones y el estado de tus postulaciones desde un panel simple.</p>
+        </div>
+
+        <div class="panel">
+          <div class="company-summary">
+            <div class="logo"></div>
+            <div>
+              <h2>Globant</h2>
+              <p>Empresa de tecnología · Tandil</p>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="info-card">
+              <h3>Publicaciones activas</h3>
+              <p>2 oportunidades abiertas</p>
+            </div>
+
+            <div class="info-card">
+              <h3>Postulantes</h3>
+              <p>18 estudiantes aplicaron esta semana</p>
+            </div>
+
+            <div class="info-card">
+              <h3>Próximo paso</h3>
+              <p>Revisar entrevistas de la próxima semana</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="header.js"></script>
+  <script>
+  if (window.location.search) {
+    const urlLimpia = window.location.pathname;
+    window.history.replaceState({}, document.title, urlLimpia);
+  }
+</script>
+</body>
+</html>

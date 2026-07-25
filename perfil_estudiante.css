@@ -1,0 +1,241 @@
+:root {
+  --cream: #fffde6;
+  --gray: #4a4a4a;
+  --darkOrange: #ff7a18;
+  --pillBg: #c29eb3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.page-shell {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  background-image: url('images/degradado.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 250px;
+}
+
+.card {
+  width: min(100%, 1200px);
+  overflow: hidden;
+  border-radius: 40px;
+  box-shadow: 0 10px 35px rgba(0,0,0,.08);
+  background: #ffffff;
+  margin: 0 24px 40px 24px;
+}
+
+.feed-panel {
+  padding: 40px;
+}
+
+.profile-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.profile-meta-side {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.avatar-wrapper {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 80px;
+  border-radius: 50%;
+  border: 4px solid #ff7a18;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  object-fit: cover;
+  background-color: #fff;
+  margin-right: 16px;
+}
+
+.edit-profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ff8d28;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(255, 141, 40, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.edit-profile-icon:hover {
+  background-color: #ff7a18;
+  transform: scale(1.05);
+}
+
+.edit-profile-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.profile-meta-side h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.profile-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 36px;
+  border-radius: 30px;
+  background: #ff8d28;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(255, 141, 40, 0.2);
+  margin-bottom: 10px;
+}
+
+.main-content-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: start;
+  width: 100%;
+}
+
+.bio-text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #000000;
+  margin: 0 0 40px 0;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+}
+
+.courses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.course-card {
+  background-color: var(--pillBg);
+  padding: 20px 28px;
+}
+
+.course-card h4 {
+  margin: 0 0 12px 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.course-card p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: #000000;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.academic-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.academic-table th {
+  color: #b08d57;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-bottom: 2px solid #000000;
+}
+
+.academic-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #000000;
+}
+
+.academic-table tr:last-child td {
+  border-bottom: 2px solid #000000;
+}
+
+.right-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 10px;
+}
+
+.info-block h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.info-block p {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: #000000;
+}
+
+.info-block a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .profile-header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 90px;
+    gap: 20px;
+  }
+  .profile-meta-side {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .main-content-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

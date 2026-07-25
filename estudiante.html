@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUTT - Inicio Estudiante</title>
+    <link rel="stylesheet" href="estudiante.css" />
+  </head>
+  <body>
+    <a href="#" onclick="volverAtras(event)">Volver</a>
+
+    <main class="page-shell">
+      <section class="card">
+        <div class="hero-panel">
+          <div class="hero-top">
+            <div class="profile-wrap">
+              <img
+                src="images/profile.jpg"
+                alt="Foto de perfil de la estudiante"
+                class="profile-photo"
+              />
+            </div>
+
+            <div class="hero-title-wrap">
+              <h1>Ofertas de empresas</h1>
+            </div>
+
+            <a href="perfil_estudiante.html" class="profile-btn">Mi perfil</a>
+          </div>
+        </div>
+
+        <div class="feed-panel">
+          <div id="ofertas-container" class="offers-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="datos_proyectos.js"></script>
+    <script>
+      const container = document.getElementById("ofertas-container");
+      const fallbackOfertas = typeof proyectosPredeterminados !== "undefined"
+        ? proyectosPredeterminados
+        : [];
+
+      function marcarPostulacion(event, elemento) {
+          
+          event.preventDefault();
+          
+          elemento.innerHTML = "<span>✔</span> POSTULADO";
+          
+          elemento.classList.add("sent");
+          
+          elemento.removeAttribute("onclick");
+        }
+
+        function volverAtras(event) {
+          event.preventDefault();
+          window.history.go(-1);
+        }
+
+      const renderOfertas = (datos) => {
+        container.innerHTML = "";
+        datos.forEach((oferta) => {
+          const article = document.createElement("article");
+          article.className = "opportunity";
+          const tipo = (oferta.tipo || "Trabajo").toLowerCase();
+          const badgeClass = tipo === "pasantía" ? "badge-pasantia" : "badge-trabajo";
+          const logoSrc = oferta.logo || oferta.logoUrl || `images/${(oferta.empresa || oferta.Empresa || "empresa").toLowerCase().replace(/\s+/g, "")}.jpg`;
+          article.innerHTML = `
+            <div class="offer-card">
+              <div class="offer-top-row">
+                <div class="offer-company">
+                  <div class="offer-logo">
+                    <img 
+                      src="${logoSrc}"
+                      alt=""
+                      onerror="this.style.display='none'; this.parentNode.style.background='#d9dce2';"
+                    />  
+                  </div>
+                  <span class="offer-company-name">${oferta.empresa || oferta.Empresa}</span>
+                </div>
+                <span class="offer-type ${badgeClass}">${oferta.tipo || "Trabajo"}</span>
+              </div>
+
+              <h3>${oferta.titulo || oferta.Titulo}</h3>
+              <p class="offer-body">${oferta.descripcion || oferta.Descripcion}</p>
+              <p class="offer-requisitos">Requisitos: ${(oferta.requisitos || ["Sin requisitos especificados"]).join(", ")}</p>
+              <a href="#" class="mini-btn" onclick="marcarPostulacion(event, this)"><span>+</span> POSTULARME</a>
+            </div>
+          `;
+          container.appendChild(article);
+        });
+      };
+
+      fetch("datos_proyectos.json")
+        .then((response) => {
+          if (!response.ok) throw new Error("No se pudo cargar el JSON");
+          return response.json();
+        })
+        .then((data) => {
+          if (Array.isArray(data) && data.length) {
+            renderOfertas(data);
+          } else {
+            renderOfertas(fallbackOfertas);
+          }
+        })
+        .catch(() => {
+          renderOfertas(fallbackOfertas);
+        });
+    </script>
+  <script>
+  if (window.location.search) {
+    const urlLimpia = window.location.pathname;
+    window.history.replaceState({}, document.title, urlLimpia);
+  }
+</script>
+</body>
+</html>

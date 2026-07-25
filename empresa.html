@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUTT - Inicio Empresa</title>
+    <link rel="stylesheet" href="empresa.css" />
+  </head>
+  <body>
+
+    <main class="page-shell">
+      <div class="main-container">
+        
+        <!-- Header alineado con los paneles de abajo -->
+        <div class="publications-header">
+          <div class="header-user-side">
+            <a href="login_empresa.html" class="btn-logout">Salir</a>
+            <h1 id="welcome-title">¡Bienvenido!</h1>
+          </div>
+          <a href="from_proyecto.html" class="btn-primary-magenta"> Subir proyecto  </a>
+        </div>
+
+        <!-- Grilla de contenido único -->
+        <section class="dashboard-grid">
+        
+          <div class="publications-panel">
+            <h2>Tus publicaciones</h2>
+            <div id="publications-container" class="publications-list"></div>
+          </div>
+
+          <div class="sidebar-panel">
+            <div class="filter-card">
+              <h3>¿Con el candidato ideal en mente? Filtra los perfiles que cumplan tus condiciones:</h3>
+              
+              <form class="filter-form">
+                <div class="filter-group">
+                  <label for="university">Universidad</label>
+                  <input id="university" type="text" placeholder="Value" />
+                </div>
+
+                <div class="filter-group">
+                  <label for="residence">País de residencia</label>
+                  <input id="residence" type="text" placeholder="Value" />
+                </div>
+
+                <div class="filter-group">
+                  <label for="career">Carrera</label>
+                  <input id="career" type="text" placeholder="Value" />
+                </div>
+
+                <div class="filter-group">
+                  <label for="subjects">Materias cursadas</label>
+                  <input id="subjects" type="text" placeholder="Value" />
+                </div>
+
+                <button type="submit" class="btn-search">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  Buscar
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </main>
+
+    <script>
+      
+      const nombreEmpresa = localStorage.getItem("empresaLogueada") || "Empresa";
+      document.getElementById("welcome-title").textContent = `¡Bienvenido ${nombreEmpresa}!`;
+
+      // Render de las publicaciones
+      const publicacionesGuardadas = JSON.parse(localStorage.getItem("misPublicaciones") || "[]");
+      const publicaciones = [
+        {
+          titulo: "Desarrollador Full-time",
+          descripcion: "La persona seleccionada va a trabajar con React y colaborar en el desarrollo de nuevas funcionalidades junto a un equipo de cuatro desarrolladores Senior. No se requiere experiencia previa.",
+          detalles: "Modalidad híbrida en Tandil. Jornada full-time.",
+          requisito: "Requisito: Estudiante avanzado o recién graduado de Ingeniería de Sistemas."
+        },
+        ...publicacionesGuardadas.map((pub) => ({
+          titulo: pub.titulo,
+          descripcion: pub.descripcion,
+          detalles: pub.modalidad || pub.detalles || "Modalidad a definir.",
+          requisito: pub.requisito || "Requisito: Información pendiente."
+        }))
+      ];
+
+      const container = document.getElementById("publications-container");
+      publicaciones.forEach((pub) => {
+        const article = document.createElement("article");
+        article.className = "pub-card";
+        article.innerHTML = `
+          <h3>${pub.titulo}</h3>
+          <p class="pub-description">${pub.descripcion}</p>
+          <p class="pub-details">${pub.detalles}</p>
+          <p class="pub-requirement">${pub.requisito}</p>
+          <div class="pub-actions">
+            <a class="btn-action" href="ver_postulantes.html?titulo=${encodeURIComponent(pub.titulo)}&descripcion=${encodeURIComponent(pub.descripcion)}&detalles=${encodeURIComponent(pub.detalles)}&requisito=${encodeURIComponent(pub.requisito)}">Ver postulantes</a>
+          </div>
+        `;
+        container.appendChild(article);
+      });
+    </script>
+  <script>
+  if (window.location.search) {
+    const urlLimpia = window.location.pathname;
+    window.history.replaceState({}, document.title, urlLimpia);
+  }
+</script>
+</body>
+</html>

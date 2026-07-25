@@ -1,0 +1,40 @@
+# RUTT - Red Universitaria de Trabajo Temprano  
+
+> Plataforma web para conectar estudiantes universitarios con sus primeras oportunidades laborales, pasantías y PPS en el sector productivo y tecnológico.
+
+## El contenido es un MVP presentado como proyecto en la Universidad
+
+## 👥 Integrantes
+- Maria del Rosario Coronado - LinkedIn 
+
+- Valentina Bisogni - LinkedIn 
+
+---
+
+## 📌 Sobre el Proyecto
+
+RUTT surge con el objetivo de facilitar la adquisición de experiencia laboral en etapas tempranas de la carrera universitaria y brindar a las empresas un acceso directo a perfiles académicos verificados.
+
+### Funcionalidades Principales
+- **Landing Page Institucional:** Presentación de la red y accesos diferenciados.
+- **Panel de Empresa:** Dashboard de publicaciones, gestión de proyectos y filtrado de candidatos.
+- **Panel de Estudiante:** Feed de ofertas y perfil interactivo con historial de postulaciones.
+- **Formulario de Postulación:** Creación y categorización de ofertas (PPS, Trabajo, Proyecto).
+- **Modo Dinámico & Vistas Adaptativas:** Ocultamiento de controles de edición según el perfil del visitante (Empresa vs. Estudiante).
+
+---
+
+## Tecnologías Utilizadas
+
+- **HTML5:** Estructura semántica de la aplicación.
+- **CSS3:** Flexbox, CSS Grid, variables custom y diseño totalmente responsive.
+- **JavaScript (ES6+):** Manipulación del DOM, gestión de estados con `localStorage`, parámetros de URL y dinámicas de interfaz.
+---
+
+##  Cómo Ejecutarlo en Local
+
+1. Clona este repositorio:
+   ```bash
+   git clone [https://github.com/TU_USUARIO/rutt-plataforma.git](https://github.com/TU_USUARIO/rutt-plataforma.git)
+
+2. Navega a la carpeta del proyecto y abre index.html en tu navegador predeterminado (o utiliza la extensión Live Server en VS Code).

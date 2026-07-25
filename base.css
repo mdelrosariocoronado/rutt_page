@@ -1,0 +1,134 @@
+:root {
+  --cream: #fffde6;
+  --cream-soft: #fff9e8;
+  --orange: #ff9f3d;
+  --pink: #f36f9f;
+  --violet: #8b5cf6;
+  --green: #349e55;
+  --text: #2d2d2d;
+  --muted: #6e6e6e;
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #fffce6 0%, #ff94b8 100%);
+  color: var(--text);
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(100%, 1000px);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+  box-shadow: 0 12px 30px var(--shadow);
+  overflow: hidden;
+}
+
+.hero-banner {
+  padding: 30px 32px;
+  background: linear-gradient(135deg, var(--orange) 0%, var(--pink) 70%, var(--violet) 100%);
+  color: white;
+}
+
+.hero-banner h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.hero-banner p {
+  margin: 0;
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+.panel {
+  padding: 24px 32px 32px;
+  background: var(--cream-soft);
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.info-card {
+  background: white;
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.info-card h2,
+.info-card h3 {
+  margin: 0 0 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--text);
+  border: 1px solid #e8e8e8;
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input, textarea, select {
+  width: 100%;
+  border: 1px solid #e3e3e3;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font: inherit;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    padding: 12px;
+  }
+
+  .hero-banner,
+  .panel {
+    padding: 20px;
+  }
+}

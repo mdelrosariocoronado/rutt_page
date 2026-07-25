@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RUTT - Red Universitaria de Trabajo Temprano</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main class="landing-shell">
+    
+    <header class="landing-hero">
+
+        <h1>RUTT</h1>
+        <p class="subtitle">Red Universitaria de Trabajo Temprano</p>
+      <h2>Donde el talento encuentra su lugar.</h2>
+      <p class="hero-description">
+        Conectamos de forma directa a alumnos universitarios con oportunidades de formación, pasantías, PPS y trabajo de calidad.
+      </p>
+    </header>
+
+    <section class="container">
+      <h3>¡Únete a nuestra red!</h3>
+      <p class="action-text">Selecciona tu perfil para iniciar sesión o registrarte en la plataforma.</p>
+      
+      <div class="login-actions">
+        <a href="login_estudiante.html" class="btn-login student-variant">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+          </svg>
+          Ingresar como Estudiante
+        </a>
+        
+        <a href="login_empresa.html" class="btn-login company-variant">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          Ingresar como Empresa
+        </a>
+      </div>
+    </section>
+
+    <footer class="landing-footer-info">
+      <div class="value-pill">Perfiles Verificados UNICEN</div>
+      <div class="value-pill">Conexión Temprana Eficaz</div>
+      <div class="value-pill">Pasantías, PPS y Proyectos</div>
+    </footer>
+
+  </main>
+  <script>
+    if (window.location.search) {
+      const urlLimpia = window.location.pathname;
+      window.history.replaceState({}, document.title, urlLimpia);
+    }
+  </script>
+</body>
+</html>

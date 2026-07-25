@@ -1,0 +1,192 @@
+:root {
+  --cream: #fffde6;
+  --purple-main: #54345a;
+  --purple-box: #b08d9f;
+  --orange-btn: #ff8d28;
+  --magenta-btn: #d80073;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background-image: url('images/degradado.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0b0222;
+}
+
+.landing-shell {
+  width: 100%;
+  max-width: 800px;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  text-align: center;
+}
+
+
+.landing-hero {
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.landing-hero .brand-logo {
+  width: 90px;
+  height: auto;
+  display: block;
+}
+
+.landing-hero .title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-hero  h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -2px;
+  color: white;
+  line-height: 1;
+}
+
+.landing-hero .subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 5px 0 30px 0;
+  color: #1a052c;
+  background: rgba(241, 211, 255, 0.418);
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
+.landing-hero h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  color: #1a052c;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 620px;
+  margin: 0 auto;
+  color: #280b42;
+}
+
+.container {
+  background-color: var(--cream);
+  width: 100%;
+  max-width: 650px;
+  border-radius: 40px;
+  padding: 40px 35px;
+  box-shadow: 0 12px 35px rgba(84, 52, 90, 0.25);
+}
+
+.container h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: var(--purple-main);
+}
+
+.action-text {
+  font-size: 1.05rem;
+  color: var(--purple-main);
+  margin: 0 0 30px 0;
+}
+
+/* Contenedor de Botones de Inicios de Sesión */
+.login-actions {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.btn-login {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  padding: 16px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(26, 5, 44, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 5, 44, 0.4);
+}
+
+.btn-login svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+/* Variantes de Color de Botones */
+.student-variant {
+  background-color: var(--orange-btn);
+}
+
+.company-variant {
+  background-color: var(--magenta-btn);
+}
+
+/* Footer de la Landing */
+.landing-footer-info {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.value-pill {
+  background-color: rgba(6, 5, 54, 0.776);
+  border: 1px solid white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .login-actions {
+    flex-direction: column;
+  }
+  .landing-hero h1 {
+    font-size: 4rem;
+  }
+  .landing-hero h2 {
+    font-size: 1.7rem;
+  }
+  .container {
+    padding: 30px 20px;
+  }
+}
